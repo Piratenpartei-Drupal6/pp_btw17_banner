@@ -50,6 +50,11 @@ function pp_btw17_banner_block($op='list', $delta=0) {
 	$module_path = drupal_get_path('module', 'pp_btw17_banner');
 
 	$block_content = "<style>";
+	$block_content .= "div.btw17_btn {".
+						"width: 100%; ".
+						"display: flex; ".
+						"justify-content: space-around;";
+	$block_content .= "}";
 	$block_content .= "div.btw17_btn a {".
 						"background: #f80; ".
 						"display: inline-block; ".
@@ -57,7 +62,7 @@ function pp_btw17_banner_block($op='list', $delta=0) {
 	$block_content .= "}";
 	$block_content .= "</style>";
 
-	$block_content .= '<div style="width: 100%; display: flex; justify-content: space-around;">';
+	$block_content .= '<div>';
 	$block_content .= '<img src="/'.$module_path.'/banner.png" alt="Freu Dich aufs Neuland" border="0"/>';
 	$block_content .= "<div class='btw17_btn'>";
 	$block_content .= "<a href='https://www.piratenpartei.de/mission/wahl-und-grundsatzprogramme/wahlprogramm-btw2017/' target='_blank'>Wahlprogramm</a>";
