@@ -1,0 +1,5 @@
+; $Id$
+name = Piratenpartei Hessen
+description = Banner zur Bundestagswahl 2017
+core = 6.x
+version = "6.x-1.0"

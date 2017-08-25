@@ -1,0 +1,68 @@
+<?php
+
+/**
+* Display help and module information.
+* @param path
+*   Which path of the site we're displaying help.
+* @param arg
+*   Array that holds the current path as would be returned from arg() function.
+* @return
+*   help text for the path.
+*/
+function pp_btw17_banner_help($path, $arg) {
+  $output = '';
+  switch ($path) {
+    case "admin/help#pp_btw17_banner":
+      $output = '<p>'. t("Zeigt den Banner zur Bundestagswahl 2017 an").'</p>';
+      break;
+  }
+  return $output;
+} // function pp_btw17_banner_help
+
+
+/**
+* Valid permissions for this module
+* @return array An array of valid permissions for the pp_btw17_banner module
+*/
+
+function pp_btw17_banner_perm() {
+  return array('access pp_btw17_banner content');
+} // function pp_btw17_banner_perm()
+
+
+/**
+* Generate HTML for the pp_btw17_banner block
+* @param op the operation from the URL
+* @param delta offset
+* @returns block HTML
+*/
+function pp_btw17_banner_block($op='list', $delta=0) {
+
+  // listing of blocks, such as on the admin/block page
+  if ($op == "list") {
+    $block[0]["info"] = t('BTW17 Banner');
+    return $block;
+
+  } else if ($op == 'view') {
+	// our block content
+	$title = "";
+
+	$module_path = drupal_get_path('module', 'pp_btw17_banner');
+
+	$block_content = "<div>";
+	$block_content .= '<img src="/'.$module_path.'/banner.png" alt="Freu Dich aufs Neuland" border="0"/>';
+	$block_content .= "<div>";
+	$block_content .= "<a href=''>Wahlprogramm</a>";
+	$block_content .= "<a href=''>Wahlkampagne</a>";
+	$block_content .= "<a href=''>Kandidierende</a>";
+	$block_content .= "</div>";
+	$block_content .= "</div>";
+
+	// set up the block
+	$block['subject'] = $title;
+	$block['content'] = $block_content;
+	return $block;
+  }
+}
+
+?>
