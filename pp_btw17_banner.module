@@ -63,7 +63,7 @@ function pp_btw17_banner_block($op='list', $delta=0) {
 						"padding: 10px 18px;";
 	$block_content .= "}";
 	$block_content .= "div.btw17_btn a:hover {".
-						"background: #471659; ".
+						"background: #672082; ".
 						"text-decoration: none;";
 	$block_content .= "}";
 	$block_content .= "</style>";
