@@ -1,5 +1,6 @@
 ; $Id$
-name = Piratenpartei Hessen
+package = Piratenpartei
+name = Piratenpartei BTW2017 Banner
 description = Banner zur Bundestagswahl 2017
 core = 6.x
 version = "6.x-1.0"
